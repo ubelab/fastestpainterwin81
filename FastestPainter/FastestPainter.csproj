@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DBA6DB0-DA08-4F54-A31A-C502EA034DFF}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastestPainter</RootNamespace>
+    <AssemblyName>FastestPainter</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>FastestPainter_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="FastestPainter_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Images\america_gothic.png" />
+    <Content Include="Images\america_gothic_tr.png" />
+    <Content Include="Images\angeliraffaello.png" />
+    <Content Include="Images\angeliraffaello_tr.png" />
+    <Content Include="Images\annazborowska.png" />
+    <Content Include="Images\annazborowska_tr.png" />
+    <Content Include="Images\annunciazionematthias.png" />
+    <Content Include="Images\annunciazionematthias_tr.png" />
+    <Content Include="Images\apollo_dafne.png" />
+    <Content Include="Images\apollo_dafne_tr.png" />
+    <Content Include="Images\arma1.png" />
+    <Content Include="Images\arma10.png" />
+    <Content Include="Images\arma2.png" />
+    <Content Include="Images\arma3.png" />
+    <Content Include="Images\arma4.png" />
+    <Content Include="Images\arma5.png" />
+    <Content Include="Images\arma6.png" />
+    <Content Include="Images\arma7.png" />
+    <Content Include="Images\arma8.png" />
+    <Content Include="Images\arma9.png" />
+    <Content Include="Images\autoritrattorembrandth.png" />
+    <Content Include="Images\autoritrattorembrandth_tr.png" />
+    <Content Include="Images\baccogiovane.png" />
+    <Content Include="Images\baccogiovane_tr.png" />
+    <Content Include="Images\bacio_klimt.png" />
+    <Content Include="Images\bacio_klimt_tr.png" />
+    <Content Include="Images\banane.png" />
+    <Content Include="Images\banane_tr.png" />
+    <Content Include="Images\banconote.png" />
+    <Content Include="Images\bather.png" />
+    <Content Include="Images\bather_tr.png" />
+    <Content Include="Images\bernardobrembo.png" />
+    <Content Include="Images\bernardobrembo_tr.png" />
+    <Content Include="Images\bg1.png" />
+    <Content Include="Images\bigbombinstruction.png" />
+    <Content Include="Images\bomb2.png" />
+    <Content Include="Images\bomb3.png" />
+    <Content Include="Images\bonuspresentation.png" />
+    <Content Include="Images\br2.png" />
+    <Content Include="Images\br3.png" />
+    <Content Include="Images\br4.png" />
+    <Content Include="Images\btn_avanti.png" />
+    <Content Include="Images\btn_left_black.png" />
+    <Content Include="Images\btn_menu.png" />
+    <Content Include="Images\btn_no.png" />
+    <Content Include="Images\btn_refresh.png" />
+    <Content Include="Images\btn_right.png" />
+    <Content Include="Images\btn_right_black.png" />
+    <Content Include="Images\btn_start.png" />
+    <Content Include="Images\btn_yes.png" />
+    <Content Include="Images\buonaventura.png" />
+    <Content Include="Images\buonaventura_tr.png" />
+    <Content Include="Images\candeggina.png" />
+    <Content Include="Images\candegginainstruction.png" />
+    <Content Include="Images\carlo_7.png" />
+    <Content Include="Images\carlo_7_tr.png" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\ciliegie.png" />
+    <Content Include="Images\ciliegie_tr.png" />
+    <Content Include="Images\clusterbomb.png" />
+    <Content Include="Images\clusterbombinstruction.png" />
+    <Content Include="Images\cocco.png" />
+    <Content Include="Images\cocco_tr.png" />
+    <Content Include="Images\coins.png" />
+    <Content Include="Images\col1.png" />
+    <Content Include="Images\col1mask.png" />
+    <Content Include="Images\col2.png" />
+    <Content Include="Images\col2mask.png" />
+    <Content Include="Images\col3.png" />
+    <Content Include="Images\col3mask.png" />
+    <Content Include="Images\col4.png" />
+    <Content Include="Images\col4mask.png" />
+    <Content Include="Images\col5.png" />
+    <Content Include="Images\col5mask.png" />
+    <Content Include="Images\cornici1.png" />
+    <Content Include="Images\cornici2.png" />
+    <Content Include="Images\cornici3.png" />
+    <Content Include="Images\cornici4.png" />
+    <Content Include="Images\cornici5.png" />
+    <Content Include="Images\crazycolors.png" />
+    <Content Include="Images\crazycolorsinstruction.png" />
+    <Content Include="Images\credits.png" />
+    <Content Include="Images\curiazi.png" />
+    <Content Include="Images\curiazi_tr.png" />
+    <Content Include="Images\decrease.png" />
+    <Content Include="Images\demoiselleavignon.png" />
+    <Content Include="Images\demoiselleavignon_tr.png" />
+    <Content Include="Images\dialogbg.9.png" />
+    <Content Include="Images\due.png" />
+    <Content Include="Images\eleonora_toledo.png" />
+    <Content Include="Images\eleonora_toledo_tr.png" />
+    <Content Include="Images\ermellino.png" />
+    <Content Include="Images\ermellino_tr.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\ficodindaio.png" />
+    <Content Include="Images\ficodindaio_tr.png" />
+    <Content Include="Images\figlia_herodias.png" />
+    <Content Include="Images\figlia_herodias_tr.png" />
+    <Content Include="Images\frida.png" />
+    <Content Include="Images\frida_tr.png" />
+    <Content Include="Images\giardiniera.png" />
+    <Content Include="Images\giardiniera_tr.png" />
+    <Content Include="Images\giocatori_carte.png" />
+    <Content Include="Images\giocatori_carte_tr.png" />
+    <Content Include="Images\gioconda.png" />
+    <Content Include="Images\gioconda_tr.png" />
+    <Content Include="Images\girasolivangogh.png" />
+    <Content Include="Images\girasolivangogh_tr.png" />
+    <Content Include="Images\giudizio_universale.png" />
+    <Content Include="Images\giudizio_universale_tr.png" />
+    <Content Include="Images\gommasize1.png" />
+    <Content Include="Images\gommasize2.png" />
+    <Content Include="Images\gommasize3.png" />
+    <Content Include="Images\gommasize4.png" />
+    <Content Include="Images\gommasize5.png" />
+    <Content Include="Images\gomma_size_1.png" />
+    <Content Include="Images\homemascotte.png" />
+    <Content Include="Images\increase.png" />
+    <Content Include="Images\ink.png" />
+    <Content Include="Images\inkinstruction.png" />
+    <Content Include="Images\invenktionbig.png" />
+    <Content Include="Images\jhonnybrush7.png" />
+    <Content Include="Images\jhonnybrushfull.png" />
+    <Content Include="Images\jhonnybrushfull_8.png" />
+    <Content Include="Images\jhonnybrushfull_9.png" />
+    <Content Include="Images\jhonnybrush_10.png" />
+    <Content Include="Images\jhonnybrush_9.png" />
+    <Content Include="Images\johannfriedrich.png" />
+    <Content Include="Images\johannfriedrich_tr.png" />
+    <Content Include="Images\john_the_batist.png" />
+    <Content Include="Images\john_the_batist_tr.png" />
+    <Content Include="Images\jolly.png" />
+    <Content Include="Images\jollyinstruction.png" />
+    <Content Include="Images\juanpareja.png" />
+    <Content Include="Images\juanpareja_tr.png" />
+    <Content Include="Images\lemon.png" />
+    <Content Include="Images\lemon_tr.png" />
+    <Content Include="Images\libertapopolo.png" />
+    <Content Include="Images\libertapopolo_tr.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\lucchetto.png" />
+    <Content Include="Images\macchiaink.png" />
+    <Content Include="Images\macchiamosca.png" />
+    <Content Include="Images\magicedgeinverseinstruction.png" />
+    <Content Include="Images\magicedges.png" />
+    <Content Include="Images\magicedgesinstruction.png" />
+    <Content Include="Images\magicedgesinverse.png" />
+    <Content Include="Images\marat.png" />
+    <Content Include="Images\marat_tr.png" />
+    <Content Include="Images\maria_maddalena.png" />
+    <Content Include="Images\maria_maddalena_tr.png" />
+    <Content Include="Images\marketing.png" />
+    <Content Include="Images\medusa.png" />
+    <Content Include="Images\medusa_tr.png" />
+    <Content Include="Images\mela.png" />
+    <Content Include="Images\mela_tr.png" />
+    <Content Include="Images\mery_laurent.png" />
+    <Content Include="Images\mery_laurent_tr.png" />
+    <Content Include="Images\mitra.png" />
+    <Content Include="Images\mitracolor.png" />
+    <Content Include="Images\mitracolorinstruction.png" />
+    <Content Include="Images\mitrainstruction.png" />
+    <Content Include="Images\morsoramarro.png" />
+    <Content Include="Images\morsoramarro_tr.png" />
+    <Content Include="Images\mosquito.png" />
+    <Content Include="Images\mosquitoinstruction.png" />
+    <Content Include="Images\napoleonealpi.png" />
+    <Content Include="Images\napoleonealpi_tr.png" />
+    <Content Include="Images\nascitavenere.png" />
+    <Content Include="Images\nascitavenere_tr.png" />
+    <Content Include="Images\pennellocolormask.png" />
+    <Content Include="Images\pennello_size_1.png" />
+    <Content Include="Images\persistence_memory.png" />
+    <Content Include="Images\persistence_memory_tr.png" />
+    <Content Include="Images\pierrot.png" />
+    <Content Include="Images\pierrot_tr.png" />
+    <Content Include="Images\plusfivesec.png" />
+    <Content Include="Images\plus_dialog.png" />
+    <Content Include="Images\punto.png" />
+    <Content Include="Images\quarto_stato.png" />
+    <Content Include="Images\quarto_stato_tr.png" />
+    <Content Include="Images\ragazzaorecchinoperla.png" />
+    <Content Include="Images\ragazzaorecchinoperla_tr.png" />
+    <Content Include="Images\record.png" />
+    <Content Include="Images\ritratto_duchessa_urbino.png" />
+    <Content Include="Images\ritratto_duchessa_urbino_tr.png" />
+    <Content Include="Images\ritratto_federico.png" />
+    <Content Include="Images\ritratto_federico_tr.png" />
+    <Content Include="Images\ritratto_monet.png" />
+    <Content Include="Images\ritratto_monet_tr.png" />
+    <Content Include="Images\ritratto_van_gogh.png" />
+    <Content Include="Images\ritratto_van_gogh_tr.png" />
+    <Content Include="Images\saint_micheal.png" />
+    <Content Include="Images\saint_micheal_tr.png" />
+    <Content Include="Images\san_sebastiano.png" />
+    <Content Include="Images\san_sebastiano_tr.png" />
+    <Content Include="Images\sec1failed.png" />
+    <Content Include="Images\sec1locked.png" />
+    <Content Include="Images\sec1ok.png" />
+    <Content Include="Images\sec1presentation.png" />
+    <Content Include="Images\sec1start.png" />
+    <Content Include="Images\sec1storyboard.png" />
+    <Content Include="Images\sec2failed.png" />
+    <Content Include="Images\sec2locked.png" />
+    <Content Include="Images\sec2ok.png" />
+    <Content Include="Images\sec2presentation.png" />
+    <Content Include="Images\sec2start.png" />
+    <Content Include="Images\sec2storyboard.png" />
+    <Content Include="Images\sec3failed.png" />
+    <Content Include="Images\sec3locked.png" />
+    <Content Include="Images\sec3ok.png" />
+    <Content Include="Images\sec3presentation.png" />
+    <Content Include="Images\sec3start.png" />
+    <Content Include="Images\sec3storyboard.png" />
+    <Content Include="Images\sec4failed.png" />
+    <Content Include="Images\sec4locked.png" />
+    <Content Include="Images\sec4ok.png" />
+    <Content Include="Images\sec4presentation.png" />
+    <Content Include="Images\sec4start.png" />
+    <Content Include="Images\sec4storyboard.png" />
+    <Content Include="Images\sec5failed.png" />
+    <Content Include="Images\sec5locked.png" />
+    <Content Include="Images\sec5ok.png" />
+    <Content Include="Images\sec5presentation.png" />
+    <Content Include="Images\sec5start.png" />
+    <Content Include="Images\sec5storyboard.png" />
+    <Content Include="Images\sfondo1.png" />
+    <Content Include="Images\sfondo2.png" />
+    <Content Include="Images\sfondo3.png" />
+    <Content Include="Images\sfondo4.png" />
+    <Content Include="Images\sfondo5.png" />
+    <Content Include="Images\shangaibomb.png" />
+    <Content Include="Images\shanghaibombinstruction.png" />
+    <Content Include="Images\skull.png" />
+    <Content Include="Images\skullinstruction.png" />
+    <Content Include="Images\sleeping_gipsy.png" />
+    <Content Include="Images\sleeping_gipsy_tr.png" />
+    <Content Include="Images\smallbombinstruction.png" />
+    <Content Include="Images\sogno_santelena.png" />
+    <Content Include="Images\sogno_santelena_tr.png" />
+    <Content Include="Images\soundoff.png" />
+    <Content Include="Images\soundon.png" />
+    <Content Include="Images\souvenirvojage.png" />
+    <Content Include="Images\souvenirvojage_tr.png" />
+    <Content Include="Images\spray.png" />
+    <Content Include="Images\sprayinstruction.png" />
+    <Content Include="Images\starrynight.png" />
+    <Content Include="Images\starrynight_tr.png" />
+    <Content Include="Images\stella.png" />
+    <Content Include="Images\stella_black.png" />
+    <Content Include="Images\stella_black_tr.png" />
+    <Content Include="Images\stella_tr.png" />
+    <Content Include="Images\supperemmaus.png" />
+    <Content Include="Images\supperemmaus_tr.png" />
+    <Content Include="Images\tavolozzavuota.png" />
+    <Content Include="Images\tbombinstruction.png" />
+    <Content Include="Images\tela.png" />
+    <Content Include="Images\tela1.png" />
+    <Content Include="Images\tela2.png" />
+    <Content Include="Images\tela3.png" />
+    <Content Include="Images\tela4.png" />
+    <Content Include="Images\tela5.png" />
+    <Content Include="Images\tela6.png" />
+    <Content Include="Images\tela_coperta.png" />
+    <Content Include="Images\tela_coperta_bonus.png" />
+    <Content Include="Images\terremoto.png" />
+    <Content Include="Images\terremotoinstruction.png" />
+    <Content Include="Images\timeinstruction.png" />
+    <Content Include="Images\transparent.png" />
+    <Content Include="Images\trapbg.png" />
+    <Content Include="Images\traptooexpensive.png" />
+    <Content Include="Images\tre.png" />
+    <Content Include="Images\tre_grazie.png" />
+    <Content Include="Images\tre_grazie_tr.png" />
+    <Content Include="Images\trianglebomb.png" />
+    <Content Include="Images\trickbg.png" />
+    <Content Include="Images\tricktooexpensive.png" />
+    <Content Include="Images\tricktrapblocked.png" />
+    <Content Include="Images\tsunami.png" />
+    <Content Include="Images\tsunami_tr.png" />
+    <Content Include="Images\tutorial1.png" />
+    <Content Include="Images\tutorial2.png" />
+    <Content Include="Images\tutorial3.png" />
+    <Content Include="Images\tutorial4.png" />
+    <Content Include="Images\tutorial5.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\uno.png" />
+    <Content Include="Images\uomobombetta.png" />
+    <Content Include="Images\uomobombetta_tr.png" />
+    <Content Include="Images\urlo.png" />
+    <Content Include="Images\urlo_tr.png" />
+    <Content Include="Images\uva.png" />
+    <Content Include="Images\uva_tr.png" />
+    <Content Include="Images\venere_marte.png" />
+    <Content Include="Images\venere_marte_tr.png" />
+    <Content Include="Images\venere_urbino.png" />
+    <Content Include="Images\venere_urbino_tr.png" />
+    <Content Include="Images\vergine_rocce.png" />
+    <Content Include="Images\vergine_rocce_tr.png" />
+    <Content Include="Images\vitruvian.png" />
+    <Content Include="Images\vitruvian_tr.png" />
+    <Content Include="Images\vortexinstruction.png" />
+    <Content Include="Images\vortice.png" />
+    <Content Include="Images\watteau.png" />
+    <Content Include="Images\watteau_tr.png" />
+    <Content Include="Images\xbomb.png" />
+    <Content Include="Images\xbombinstruction.png" />
+    <Content Include="Images\youngman.png" />
+    <Content Include="Images\youngman_tr.png" />
+    <Content Include="Images\zatteramedusa.png" />
+    <Content Include="Images\zatteramedusa_tr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
