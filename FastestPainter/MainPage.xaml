@@ -12,14 +12,28 @@
             <ImageBrush Stretch="UniformToFill" ImageSource="Images/bg1.png"/>
         </Grid.Background>
         <Image HorizontalAlignment="Right" Height="246" VerticalAlignment="Bottom" Width="250" RenderTransformOrigin="0.522,0.526" Source="Images/jhonnybrush_9.png"/>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Bottom" Width="100" Source="Images/soundon.png" Margin="10,0,0,0"/>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Bottom" Width="100" Source="Images/credits.png" Margin="133,0,0,0"/>
         <StackPanel HorizontalAlignment="Center" Height="515" VerticalAlignment="Center" Width="958">
             <Image HorizontalAlignment="Center" Height="178" Margin="0" VerticalAlignment="Center" Width="745" Source="Images/logo.png"/>
             <Button Content="PLAY" HorizontalAlignment="Center" Margin="0,20" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="Andy" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" BorderThickness="0"/>
             <Button Content="TRICKS &amp; TRAPS" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="Andy" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" Width="812" Margin="0,0,0,20" BorderThickness="0"/>
             <Button Content="ATELIER" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="Andy" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" BorderThickness="0"/>
         </StackPanel>
+        <Button Content="" HorizontalAlignment="Left" Margin="172,0,0,9" VerticalAlignment="Bottom" Height="120" Width="120" BorderThickness="0" ToolTipService.ToolTip="Credits" IsDoubleTapEnabled="False" IsHoldingEnabled="False">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Images/credits.png" 
+                                 Stretch="Fill"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="27,0,0,9" VerticalAlignment="Bottom" Height="120" Width="120" BorderThickness="0" ToolTipService.ToolTip="Sound on/off">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="Images/soundon.png" 
+                                 Stretch="Fill"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Page>
