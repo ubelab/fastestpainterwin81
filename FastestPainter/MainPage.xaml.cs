@@ -26,5 +26,30 @@ namespace FastestPainter
         {
             this.InitializeComponent();
         }
+
+        private void playButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Sections));
+        }
+
+        private void tricksTrapsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void atelierButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void soundButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void creditsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
