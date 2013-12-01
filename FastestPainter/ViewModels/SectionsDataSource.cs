@@ -11,7 +11,7 @@ namespace FastestPainter.DataSource
     using Windows.UI.Xaml.Media;
     using Windows.UI.Xaml.Media.Imaging;
 
-    public class Item : System.ComponentModel.INotifyPropertyChanged
+    public class Section : System.ComponentModel.INotifyPropertyChanged
     {
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
@@ -37,6 +37,24 @@ namespace FastestPainter.DataSource
                 {
                     this._Title = value;
                     this.OnPropertyChanged("Title");
+                }
+            }
+        }
+
+        private ushort _Index = 0;
+        public ushort Index
+        {
+            get
+            {
+                return this._Index;
+            }
+
+            set
+            {
+                if (this._Index != value)
+                {
+                    this._Index = value;
+                    this.OnPropertyChanged("Index");
                 }
             }
         }
@@ -74,33 +92,39 @@ namespace FastestPainter.DataSource
 
         public SectionsStoreData()
         {
-            Item item;
-            item = new Item();
+            Section item;
+            item = new Section();
+            item.Index = 1;
             item.Title = "Big Boss";
             item.SetImage("/Images/sec1presentation.png");
             Collection.Add(item);
 
-            item = new Item();
+            item = new Section();
+            item.Index = 2;
             item.Title = "Jean Luis Baguette";
             item.SetImage("/Images/sec2presentation.png");
             Collection.Add(item);
 
-            item = new Item();
+            item = new Section();
+            item.Index = 3;
             item.Title = "The King";
             item.SetImage("/Images/sec3presentation.png");
             Collection.Add(item);
 
-            item = new Item();
+            item = new Section();
+            item.Index = 4;
             item.Title = "Big Mama";
             item.SetImage("/Images/sec4presentation.png");
             Collection.Add(item);
 
-            item = new Item();
+            item = new Section();
+            item.Index = 5;
             item.Title = "Enigmus";
             item.SetImage("/Images/sec5presentation.png");
             Collection.Add(item);
 
-            item = new Item();
+            item = new Section();
+            item.Index = 6;
             item.Title = "BONUS";
             item.SetImage("/Images/bonuspresentation.png");
             Collection.Add(item);
@@ -114,7 +138,7 @@ namespace FastestPainter.DataSource
     // Workaround: data binding works best with an enumeration of objects that does not implement IList
     public class ItemCollection : IEnumerable<Object>
     {
-        private System.Collections.ObjectModel.ObservableCollection<Item> itemCollection = new System.Collections.ObjectModel.ObservableCollection<Item>();
+        private System.Collections.ObjectModel.ObservableCollection<Section> itemCollection = new System.Collections.ObjectModel.ObservableCollection<Section>();
 
         public IEnumerator<Object> GetEnumerator()
         {
@@ -126,7 +150,7 @@ namespace FastestPainter.DataSource
             return GetEnumerator();
         }
 
-        public void Add(Item item)
+        public void Add(Section item)
         {
             itemCollection.Add(item);
         }

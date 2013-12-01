@@ -452,6 +452,18 @@
     <Content Include="Images\youngman_tr.png" />
     <Content Include="Images\zatteramedusa.png" />
     <Content Include="Images\zatteramedusa_tr.png" />
+    <Content Include="Sounds\coins.mp3" />
+    <Content Include="Sounds\flush.mp3" />
+    <Content Include="Sounds\go.mp3" />
+    <Content Include="Sounds\negative.mp3" />
+    <Content Include="Sounds\one.mp3" />
+    <Content Include="Sounds\plaf.mp3" />
+    <Content Include="Sounds\positive.mp3" />
+    <Content Include="Sounds\song.mp3" />
+    <Content Include="Sounds\stamp.mp3" />
+    <Content Include="Sounds\three.mp3" />
+    <Content Include="Sounds\two.mp3" />
+    <Content Include="Sounds\whoosh.mp3" />
     <Page Include="Levels.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
