@@ -39,7 +39,7 @@ namespace FastestPainter
 
         private void atelierButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(Levels));
         }
 
         private void soundButton_Click(object sender, RoutedEventArgs e)

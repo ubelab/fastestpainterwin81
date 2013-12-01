@@ -68,11 +68,11 @@ namespace FastestPainter.DataSource
 
     
 
-    public class StoreData
+    public class SectionsStoreData
     {
         private ItemCollection Collection = new ItemCollection();
 
-        public StoreData()
+        public SectionsStoreData()
         {
             Item item;
             item = new Item();

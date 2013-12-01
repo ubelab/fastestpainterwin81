@@ -116,9 +116,13 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Levels.xaml.cs">
+      <DependentUpon>Levels.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sections.xaml.cs">
       <DependentUpon>Sections.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\LevelsDataSource.cs" />
     <Compile Include="ViewModels\SectionsDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -448,6 +452,10 @@
     <Content Include="Images\youngman_tr.png" />
     <Content Include="Images\zatteramedusa.png" />
     <Content Include="Images\zatteramedusa_tr.png" />
+    <Page Include="Levels.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Sections.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
