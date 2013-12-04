@@ -53,11 +53,11 @@
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Left" Width="Auto" Height="Auto">
-                        <Border Background="#00000000" Padding="150">
+                        <Border Background="#00000000">
                             <Image Source="{Binding Image}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
                         </Border>
                         <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
-                            <TextBlock Text="{Binding Title}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding Title}" FontFamily="{StaticResource EdoSZ}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

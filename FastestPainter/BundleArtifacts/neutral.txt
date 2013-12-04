@@ -1,0 +1,3 @@
+MainPackage=C:\Users\utente\Documents\Visual Studio 2013\Projects\FastestPainter\FastestPainter\bin\Debug\FastestPainter_1.0.0.0_Bundle\FastestPainter_1.0.0.0_AnyCPU_Debug.appx
+SymbolPackage=C:\Users\utente\Documents\Visual Studio 2013\Projects\FastestPainter\FastestPainter\AppPackages\FastestPainter_1.0.0.0_Debug_Test\FastestPainter_1.0.0.0_AnyCPU_Debug.appxsym
+ResourcePack=C:\Users\utente\Documents\Visual Studio 2013\Projects\FastestPainter\FastestPainter\bin\Debug\FastestPainter_1.0.0.0_Bundle\FastestPainter_1.0.0.0_scale-180.appx

@@ -14,11 +14,11 @@
         <Image HorizontalAlignment="Right" Height="246" VerticalAlignment="Bottom" Width="250" RenderTransformOrigin="0.522,0.526" Source="Images/jhonnybrush_9.png"/>
         <StackPanel HorizontalAlignment="Center" Height="515" VerticalAlignment="Center" Width="958">
             <Image HorizontalAlignment="Center" Height="178" Margin="0" VerticalAlignment="Center" Width="745" Source="Images/logo.png"/>
-            <Button x:Name="playButton" Content="PLAY" HorizontalAlignment="Center" Margin="0,20" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="Andy" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" BorderThickness="0" Click="playButton_Click"/>
-            <Button x:Name="tricksTrapsButton" Content="TRICKS &amp; TRAPS" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="Andy" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" Width="812" Margin="0,0,0,20" BorderThickness="0" Click="tricksTrapsButton_Click"/>
-            <Button x:Name="atelierButton" Content="ATELIER" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="Andy" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" BorderThickness="0" Click="atelierButton_Click"/>
+            <Button x:Name="playButton" Content="PLAY" HorizontalAlignment="Center" Margin="0,20" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="{StaticResource EdoSZ}" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" BorderThickness="0" Click="playButton_Click"/>
+            <Button x:Name="tricksTrapsButton" Content="TRICKS &amp; TRAPS" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="{StaticResource EdoSZ}" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" Width="812" Margin="0,0,0,20" BorderThickness="0" Click="tricksTrapsButton_Click"/>
+            <Button x:Name="atelierButton" Content="ATELIER" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTipService.ToolTip="PLAY" FontFamily="{StaticResource EdoSZ}" FontSize="70" FontWeight="Bold" Foreground="#FF2482C7" BorderThickness="0" Click="atelierButton_Click"/>
         </StackPanel>
-        <Button x:Name="creditsButton" Content="" HorizontalAlignment="Left" Margin="172,0,0,9" VerticalAlignment="Bottom" Height="120" Width="120" BorderThickness="0" ToolTipService.ToolTip="Credits" IsDoubleTapEnabled="False" IsHoldingEnabled="False" Click="creditsButton_Click">
+        <Button x:Name="creditsButton" Content="" HorizontalAlignment="Left" Margin="147,0,0,9" VerticalAlignment="Bottom" Height="100" Width="100" BorderThickness="0" ToolTipService.ToolTip="Credits" IsDoubleTapEnabled="False" IsHoldingEnabled="False" Click="creditsButton_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="Images/credits.png" 
@@ -26,7 +26,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="soundButton" Content="" HorizontalAlignment="Left" Margin="27,0,0,9" VerticalAlignment="Bottom" Height="120" Width="120" BorderThickness="0" ToolTipService.ToolTip="Sound on/off" Click="soundButton_Click">
+        <Button x:Name="soundButton" Content="" HorizontalAlignment="Left" Margin="27,0,0,9" VerticalAlignment="Bottom" Height="100" Width="100" BorderThickness="0" ToolTipService.ToolTip="Sound on/off" Click="soundButton_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="Images/soundon.png" 
