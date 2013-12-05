@@ -102,8 +102,9 @@ namespace FastestPainter
 
         private void sectionClick(object sender, TappedRoutedEventArgs e)
         {
-            MessageDialog dialog = new MessageDialog("Selected " + e.OriginalSource);
-            dialog.ShowAsync();
+            //MessageDialog dialog = new MessageDialog("Selected " + e.OriginalSource);
+            //dialog.ShowAsync();
+            this.Frame.Navigate(typeof(PaintCanvas));
         }
 
     }
