@@ -1,6 +1,6 @@
 ﻿<Page
     x:Name="pageRoot"
-    x:Class="FastestPainter.PaintCanvas"
+    x:Class="FastestPainter.BitmapCanvas"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -19,12 +19,9 @@
         <Grid.Background>
             <ImageBrush Stretch="UniformToFill" ImageSource="Images/sfondo1.png"/>
         </Grid.Background>
-        <Canvas x:Name="MyCanvas" Background="Transparent" Margin="0" >
-            <Button x:Name="RedBtn" Content="RED" Canvas.Left="1289" Canvas.Top="-3" Click="RedBtn_Click" HorizontalAlignment="Right"/>
-            <Button x:Name="BlueBtn" Content="BLUE" Canvas.Left="1289" Canvas.Top="46" RenderTransformOrigin="0.5,0.5" Click="BlueBtn_Click" HorizontalAlignment="Right"/>
-            <Button x:Name="transparentBtn" Content="transparent" Canvas.Left="1258" Canvas.Top="102" Click="transparentBtn_Click" HorizontalAlignment="Right"/>
-            <Button Content="EXPORT BITMAP" Canvas.Left="1224" Canvas.Top="159" HorizontalAlignment="Right" Click="Button_Click"/>
-        </Canvas>
+
+        <Image x:Name="Dashboard" Source="Images/vitruvian.png" Stretch="Fill"/>
+
         <Image Height="100" Width="100" Source="Images/gomma_size_1.png" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         <Image Height="100" Width="100" Source="Images/gommasize1.png" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,100"/>
         <Image HorizontalAlignment="Left" Height="467" VerticalAlignment="Center" Width="109" Source="Images/tavolozzavuota.png"/>

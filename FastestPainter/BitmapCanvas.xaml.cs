@@ -19,7 +19,6 @@ using Windows.Devices.Input;
 using Windows.UI.Xaml.Shapes;
 using Windows.UI;
 using Windows.UI.Xaml.Media.Imaging;
-using Windows.Graphics.Imaging;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -28,13 +27,12 @@ namespace FastestPainter
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class PaintCanvas : Page
+    public sealed partial class BitmapCanvas : Page
     {
 
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
-        InkManager _inkKhaled = new Windows.UI.Input.Inking.InkManager();
         private uint _penID;
         private uint _touchID;
         private Point _previousContactPt;
@@ -62,29 +60,42 @@ namespace FastestPainter
         }
 
 
-        public PaintCanvas()
+        public BitmapCanvas()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
 
-            MyCanvas.PointerPressed += new PointerEventHandler(MyCanvas_PointerPressed);
-            MyCanvas.PointerMoved += new PointerEventHandler(MyCanvas_PointerMoved);
-            MyCanvas.PointerReleased += new PointerEventHandler(MyCanvas_PointerReleased);
-            MyCanvas.PointerExited += new PointerEventHandler(MyCanvas_PointerReleased);
+            Dashboard.PointerPressed += new PointerEventHandler(MyCanvas_PointerPressed);
+            Dashboard.PointerMoved += new PointerEventHandler(MyCanvas_PointerMoved);
+            Dashboard.PointerReleased += new PointerEventHandler(MyCanvas_PointerReleased);
+            Dashboard.PointerExited += new PointerEventHandler(MyCanvas_PointerReleased);
 
+            
         }
 
         #region PointerEvents
         private void MyCanvas_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            if (e.Pointer.PointerId == _touchID || e.Pointer.PointerId == _penID)
+
+            WriteableBitmap writeableBmp = BitmapFactory.New(512, 512);
+            writeableBmp.Clear(Colors.White);
+            Dashboard.Source = writeableBmp;
+            BitmapContext bitmapContext = writeableBmp.GetBitmapContext();
+
+            writeableBmp.DrawRectangle(2, 4, 212, 210, Colors.Red);
+
+            // Present the WriteableBitmap!
+            writeableBmp.Invalidate();
+            
+            
+            if (e.Pointer.PointerId == _penID)
             {
-                Windows.UI.Input.PointerPoint pt = e.GetCurrentPoint(MyCanvas);
+                Windows.UI.Input.PointerPoint pt = e.GetCurrentPoint(Dashboard);
 
                 // Pass the pointer information to the InkManager. 
-                _inkKhaled.ProcessPointerUp(pt);
+                
             }
 
             else if (e.Pointer.PointerId == _touchID)
@@ -103,9 +114,9 @@ namespace FastestPainter
 
         private void MyCanvas_PointerMoved(object sender, PointerRoutedEventArgs e)
         {
-            if (e.Pointer.PointerId == _touchID || e.Pointer.PointerId == _penID)
+            if (e.Pointer.PointerId == _penID)
             {
-                PointerPoint pt = e.GetCurrentPoint(MyCanvas);
+                PointerPoint pt = e.GetCurrentPoint(Dashboard);
 
                 // Render a red line on the canvas as the pointer moves. 
                 // Distance() is an application-defined function that tests
@@ -126,20 +137,19 @@ namespace FastestPainter
                         X2 = x2,
                         Y2 = y2,
                         StrokeThickness = 10.0,
-                        StrokeStartLineCap = PenLineCap.Round,
                         StrokeEndLineCap = PenLineCap.Round,
-                        Stroke = new SolidColorBrush(BrushColor)
+                        Stroke = new SolidColorBrush(Colors.Red)
                     };
 
                     _previousContactPt = currentContactPt;
 
-                    // Pass the pointer information to the InkManager.
-                    _inkKhaled.ProcessPointerUpdate(pt);
-
                     // Draw the line on the canvas by adding the Line object as
                     // a child of the Canvas object.
-                    MyCanvas.Children.Add(line);
+                    //MyCanvas.Children.Add(line);
+
+                    //TODO DRAW LINE ON BITMAP
                     
+
                 }
             }
 
@@ -160,17 +170,17 @@ namespace FastestPainter
         private void MyCanvas_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
             // Get information about the pointer location.
-            PointerPoint pt = e.GetCurrentPoint(MyCanvas);
+            PointerPoint pt = e.GetCurrentPoint(Dashboard);
             _previousContactPt = pt.Position;
 
             // Accept input only from a pen or mouse with the left button pressed. 
             PointerDeviceType pointerDevType = e.Pointer.PointerDeviceType;
-            if (e.Pointer.PointerId == _touchID || pointerDevType == PointerDeviceType.Pen ||
+            if (pointerDevType == PointerDeviceType.Pen ||
                     pointerDevType == PointerDeviceType.Mouse &&
                     pt.Properties.IsLeftButtonPressed)
             {
                 // Pass the pointer information to the InkManager.
-                _inkKhaled.ProcessPointerDown(pt);
+               
                 _penID = pt.PointerId;
 
                 e.Handled = true;
@@ -234,30 +244,5 @@ namespace FastestPainter
 
         #endregion
 
-        private Color BrushColor = Color.FromArgb(255,255,0,0);
-        private void RedBtn_Click(object sender, RoutedEventArgs e)
-        {
-            
-            BrushColor = Color.FromArgb(255, 255, 0, 0);
-        }
-
-        private void BlueBtn_Click(object sender, RoutedEventArgs e)
-        {
-            
-            BrushColor = Color.FromArgb(255, 0, 0, 255);
-        }
-
-        private void transparentBtn_Click(object sender, RoutedEventArgs e)
-        {
-            
-            
-            BrushColor = Colors.Gold;
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }

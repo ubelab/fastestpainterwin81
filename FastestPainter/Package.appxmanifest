@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="af616d0b-38ca-40b9-8886-15e260657b97" Publisher="CN=utente" Version="1.0.0.2" />
+  <Identity Name="af616d0b-38ca-40b9-8886-15e260657b97" Publisher="CN=utente" Version="1.0.0.3" />
   <Properties>
     <DisplayName>FastestPainter</DisplayName>
     <PublisherDisplayName>utente</PublisherDisplayName>

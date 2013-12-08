@@ -104,11 +104,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BitmapCanvas.xaml.cs">
+      <DependentUpon>BitmapCanvas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\ObservableDictionary.cs" />
@@ -135,6 +135,11 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="FastestPainter_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <Page Include="BitmapCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Content Include="Fonts\edosz.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -492,6 +497,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WriteableBitmapEx.WinRT">
+      <HintPath>..\packages\WriteableBitmapEx.1.0.9.0\lib\NetCore45\WriteableBitmapEx.WinRT.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
